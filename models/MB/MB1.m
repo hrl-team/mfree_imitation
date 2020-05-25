@@ -54,16 +54,16 @@ function [ out ] = MB1( params,pnames,learning_data,post_learning_data,simulatio
                 learning_data(i,CF_OUTCOME) = cf_out;
 
             else
+               
                 lik = lik + log(P(learning_data(i,STATE),learning_data(i,CHOICE)));%compute likelihood
-                %A = max(beta*Q(learning_data(i,STATE),:));
-                %lik = lik + beta*Q(learning_data(i,STATE),learning_data(i,CHOICE)) - (A+log(sum(exp(beta*Q(learning_data(i,STATE),:)-A))));   
+               
             end
 
             %private learning
             RPE =  learning_data(i,OUTCOME) - Q(learning_data(i,STATE),learning_data(i,CHOICE));
             Q(learning_data(i,STATE),learning_data(i,CHOICE)) = Q(learning_data(i,STATE),learning_data(i,CHOICE)) + alpha_rpe * RPE;
 
-	    %symmetric updating
+	       %symmetric updating
             RPE2 =  -learning_data(i,OUTCOME) - Q(learning_data(i,STATE),3-learning_data(i,CHOICE));
             Q(learning_data(i,STATE),3-learning_data(i,CHOICE)) = Q(learning_data(i,STATE),3-learning_data(i,CHOICE)) + alpha_rpe * RPE2;
 

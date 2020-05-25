@@ -33,9 +33,9 @@ function [ out ] = DB4( params,pnames,learning_data,post_learning_data,simulatio
                 learning_data(i,CF_OUTCOME) = cf_out;
 
             else
+              
                 lik = lik + log(P(learning_data(i,STATE),learning_data(i,CHOICE)));%compute likelihood
-                %A = max(beta*Q(learning_data(i,STATE),:));
-                %lik = lik + beta*Q(learning_data(i,STATE),learning_data(i,CHOICE)) - (A+log(sum(exp(beta*Q(learning_data(i,STATE),:)-A))));   
+              
             end
 
             %private learning
