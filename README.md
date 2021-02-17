@@ -1,4 +1,4 @@
-Experiment data fro the paper "Computational mechanisms of imitation in the context of reinforcement learning"
+Data for the paper: Najar, A., Bonnet, E., Bahrami, B., & Palminteri, S. (2020). The actions of others act as a pseudo-reward to drive imitation in the context of social reinforcement learning. PLoS Biology, 18(12), e3001028.
 
 # Folders
 ## Data
